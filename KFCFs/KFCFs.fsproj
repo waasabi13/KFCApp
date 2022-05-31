@@ -1,11 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net472</TargetFramework> 
 
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Include="KFCItemsBase.fs" />
+    <Compile Include="Size.fs" />
+    <Compile Include="Drink.fs" />
+    <Compile Include="Snack.fs" />
+    <Compile Include="Burger.fs" />
+    <Compile Include="FriedChicken.fs" />
   </ItemGroup>
 </Project>
