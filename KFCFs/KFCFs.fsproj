@@ -12,5 +12,10 @@
     <Compile Include="Snack.fs" />
     <Compile Include="Burger.fs" />
     <Compile Include="FriedChicken.fs" />
+    <Compile Include="JsonDB.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 </Project>
