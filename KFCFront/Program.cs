@@ -16,7 +16,14 @@ namespace KFCFront
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrontForm());
+            OpenFileDialog jsonFileDialog = new OpenFileDialog();
+            jsonFileDialog.Filter = "JSON Files|*.json";
+            if (jsonFileDialog.ShowDialog() != DialogResult.OK)
+            {
+                Application.Exit();
+                return;
+            }
+            Application.Run(new FrontForm(jsonFileDialog.FileName));
         }
     }
 }

@@ -53,6 +53,7 @@ namespace KFCFront
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(405, 548);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -162,7 +163,7 @@ namespace KFCFront
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrontForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FrontForm_Load);
+            //this.Load += new System.EventHandler(this.FrontForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

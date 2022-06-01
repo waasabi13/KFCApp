@@ -1,14 +1,14 @@
 ﻿namespace KFC_Base
 
 type Size = 
-    | Small
+    |Small
     |Medium
     |Big
 
 
 module sizeString = 
     let SizeToString = function
-        | Small -> "Маленький"
+        |Small -> "Маленький"
         |Medium -> "Средний"
         |Big -> "Большой"
     
