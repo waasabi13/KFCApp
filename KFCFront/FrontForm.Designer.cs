@@ -40,6 +40,7 @@ namespace KFCFront
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,9 +49,9 @@ namespace KFCFront
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(0, 31);
+            this.listBox1.Location = new System.Drawing.Point(0, 63);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(405, 580);
+            this.listBox1.Size = new System.Drawing.Size(405, 548);
             this.listBox1.TabIndex = 0;
             // 
             // menuStrip1
@@ -74,30 +75,35 @@ namespace KFCFront
             this.всёМенюToolStripMenuItem.Name = "всёМенюToolStripMenuItem";
             this.всёМенюToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.всёМенюToolStripMenuItem.Text = "Всё меню";
+            this.всёМенюToolStripMenuItem.Click += new System.EventHandler(this.всёМенюToolStripMenuItem_Click);
             // 
             // бургерыToolStripMenuItem
             // 
             this.бургерыToolStripMenuItem.Name = "бургерыToolStripMenuItem";
             this.бургерыToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.бургерыToolStripMenuItem.Text = "Бургеры";
+            this.бургерыToolStripMenuItem.Click += new System.EventHandler(this.бургерыToolStripMenuItem_Click);
             // 
             // курицаToolStripMenuItem
             // 
             this.курицаToolStripMenuItem.Name = "курицаToolStripMenuItem";
             this.курицаToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.курицаToolStripMenuItem.Text = "Курица";
+            this.курицаToolStripMenuItem.Click += new System.EventHandler(this.курицаToolStripMenuItem_Click);
             // 
             // снекиToolStripMenuItem
             // 
             this.снекиToolStripMenuItem.Name = "снекиToolStripMenuItem";
             this.снекиToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.снекиToolStripMenuItem.Text = "Снеки";
+            this.снекиToolStripMenuItem.Click += new System.EventHandler(this.снекиToolStripMenuItem_Click);
             // 
             // напиткиToolStripMenuItem
             // 
             this.напиткиToolStripMenuItem.Name = "напиткиToolStripMenuItem";
             this.напиткиToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.напиткиToolStripMenuItem.Text = "Напитки";
+            this.напиткиToolStripMenuItem.Click += new System.EventHandler(this.напиткиToolStripMenuItem_Click);
             // 
             // специальныеПредложенияToolStripMenuItem
             // 
@@ -129,11 +135,25 @@ namespace KFCFront
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(405, 24);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.Items.AddRange(new object[] {
+            "По названию [▲]",
+            "По названию [▼]",
+            "По цене [▲]",
+            "По цене [▼]"});
+            // 
             // FrontForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 624);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -164,6 +184,7 @@ namespace KFCFront
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

@@ -27,3 +27,6 @@ type JsonDB(file: string)=
 
     member this.GetAllDrinks() = 
         List.filter (fun (item: KFCItemsBase) -> item :? Drink) Items
+
+    static member Sorted(items: (KFCItemsBase list), sortingFunction) =
+        List.sortWith sortingFunction items
