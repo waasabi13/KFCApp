@@ -37,6 +37,11 @@ namespace KFCFront
             this.снекиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.напиткиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.специальныеПредложенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.самоеДорогоеВМенюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.самыйБольшойБургерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.самыйДешевыйБургерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.самыйДешевыйНапитокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.самыйКалорийныйСнекToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -108,9 +113,50 @@ namespace KFCFront
             // 
             // специальныеПредложенияToolStripMenuItem
             // 
+            this.специальныеПредложенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.самоеДорогоеВМенюToolStripMenuItem,
+            this.самыйБольшойБургерToolStripMenuItem,
+            this.самыйДешевыйБургерToolStripMenuItem,
+            this.самыйДешевыйНапитокToolStripMenuItem,
+            this.самыйКалорийныйСнекToolStripMenuItem});
             this.специальныеПредложенияToolStripMenuItem.Name = "специальныеПредложенияToolStripMenuItem";
             this.специальныеПредложенияToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
             this.специальныеПредложенияToolStripMenuItem.Text = "Специальные предложения";
+            // 
+            // самоеДорогоеВМенюToolStripMenuItem
+            // 
+            this.самоеДорогоеВМенюToolStripMenuItem.Name = "самоеДорогоеВМенюToolStripMenuItem";
+            this.самоеДорогоеВМенюToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.самоеДорогоеВМенюToolStripMenuItem.Text = "Самое дорогое в меню";
+            this.самоеДорогоеВМенюToolStripMenuItem.Click += new System.EventHandler(this.самоеДорогоеВМенюToolStripMenuItem_Click);
+            // 
+            // самыйБольшойБургерToolStripMenuItem
+            // 
+            this.самыйБольшойБургерToolStripMenuItem.Name = "самыйБольшойБургерToolStripMenuItem";
+            this.самыйБольшойБургерToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.самыйБольшойБургерToolStripMenuItem.Text = "Самый большой бургер";
+            this.самыйБольшойБургерToolStripMenuItem.Click += new System.EventHandler(this.самыйБольшойБургерToolStripMenuItem_Click);
+            // 
+            // самыйДешевыйБургерToolStripMenuItem
+            // 
+            this.самыйДешевыйБургерToolStripMenuItem.Name = "самыйДешевыйБургерToolStripMenuItem";
+            this.самыйДешевыйБургерToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.самыйДешевыйБургерToolStripMenuItem.Text = "Самый дешевый бургер";
+            this.самыйДешевыйБургерToolStripMenuItem.Click += new System.EventHandler(this.самыйДешевыйБургерToolStripMenuItem_Click);
+            // 
+            // самыйДешевыйНапитокToolStripMenuItem
+            // 
+            this.самыйДешевыйНапитокToolStripMenuItem.Name = "самыйДешевыйНапитокToolStripMenuItem";
+            this.самыйДешевыйНапитокToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.самыйДешевыйНапитокToolStripMenuItem.Text = "Самый дешевый напиток";
+            this.самыйДешевыйНапитокToolStripMenuItem.Click += new System.EventHandler(this.самыйДешевыйНапитокToolStripMenuItem_Click);
+            // 
+            // самыйКалорийныйСнекToolStripMenuItem
+            // 
+            this.самыйКалорийныйСнекToolStripMenuItem.Name = "самыйКалорийныйСнекToolStripMenuItem";
+            this.самыйКалорийныйСнекToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.самыйКалорийныйСнекToolStripMenuItem.Text = "Самый калорийный снек";
+            this.самыйКалорийныйСнекToolStripMenuItem.Click += new System.EventHandler(this.самыйКалорийныйСнекToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -139,15 +185,15 @@ namespace KFCFront
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(405, 24);
-            this.comboBox1.TabIndex = 5;
             this.comboBox1.Items.AddRange(new object[] {
             "По названию [▲]",
             "По названию [▼]",
             "По цене [▲]",
             "По цене [▼]"});
+            this.comboBox1.Location = new System.Drawing.Point(0, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(405, 24);
+            this.comboBox1.TabIndex = 5;
             // 
             // FrontForm
             // 
@@ -163,7 +209,6 @@ namespace KFCFront
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrontForm";
             this.Text = "Form1";
-            //this.Load += new System.EventHandler(this.FrontForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -186,6 +231,11 @@ namespace KFCFront
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ToolStripMenuItem самоеДорогоеВМенюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem самыйБольшойБургерToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem самыйДешевыйБургерToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem самыйДешевыйНапитокToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem самыйКалорийныйСнекToolStripMenuItem;
     }
 }
 

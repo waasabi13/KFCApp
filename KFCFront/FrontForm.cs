@@ -126,7 +126,31 @@ namespace KFCFront
         {
             DescriptionItem(selectedItems[listBox1.SelectedIndex]);
         }
-        //сделать масштаб картинки
+        private void самоеДорогоеВМенюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetMostExpensive());
+        }
 
+        private void самыйБольшойБургерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetBiggestBurger());
+        }
+
+        private void самыйДешевыйБургерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetCheapBurger());
+        }
+
+        private void самыйДешевыйНапитокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetMostCheapDrink());
+        }
+
+        private void самыйКалорийныйСнекToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetMostKcalSnack());
+        }
+
+        //сделать масштаб картинки
     }
 }

@@ -30,3 +30,24 @@ type JsonDB(file: string)=
 
     static member Sorted(items: (KFCItemsBase list), sortingFunction) =
         List.sortWith sortingFunction items
+
+    member this.GetMostExpensive() = 
+        List.maxBy(fun (item:KFCItemsBase) -> item.Price) (this.Menu())
+
+    member this.GetBiggestBurger() = 
+        let burgers = List.map(fun (item:KFCItemsBase)->item:?>Burger) (this.GetAllBurgers())
+        List.maxBy(fun (item:Burger) -> item.Weight) burgers
+
+    member this.GetMostCheapDrink() = 
+        let drinks = List.map(fun (item:KFCItemsBase)->item:?>Drink) (this.GetAllDrinks())
+        List.minBy(fun (item:Drink) -> item.Price) drinks
+
+    member this.GetMostKcalSnack() = 
+        let snacks = List.map(fun (item:KFCItemsBase)->item:?>Snack) (this.GetAllSnacks())
+        List.maxBy(fun (item:Snack) -> item.Kcal) snacks
+
+    //самый дешевый низкокалорийный бургер
+    member this.GetCheapBurger() = 
+        let burgers = List.map(fun (item:KFCItemsBase)->item:?>Burger) (this.GetAllBurgers())
+        List.minBy(fun (item:Burger) -> item.Price) burgers
+        
