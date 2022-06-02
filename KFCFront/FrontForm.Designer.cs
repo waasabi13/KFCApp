@@ -58,12 +58,12 @@ namespace KFCFront
             // 
             // listBox1
             // 
-            this.listBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 24;
+            this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(12, 76);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(405, 292);
+            this.listBox1.Size = new System.Drawing.Size(405, 279);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
@@ -80,42 +80,42 @@ namespace KFCFront
             this.специальныеПредложенияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1385, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1385, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // всёМенюToolStripMenuItem
             // 
             this.всёМенюToolStripMenuItem.Name = "всёМенюToolStripMenuItem";
-            this.всёМенюToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
+            this.всёМенюToolStripMenuItem.Size = new System.Drawing.Size(89, 21);
             this.всёМенюToolStripMenuItem.Text = "Всё меню";
             this.всёМенюToolStripMenuItem.Click += new System.EventHandler(this.всёМенюToolStripMenuItem_Click);
             // 
             // бургерыToolStripMenuItem
             // 
             this.бургерыToolStripMenuItem.Name = "бургерыToolStripMenuItem";
-            this.бургерыToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
+            this.бургерыToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
             this.бургерыToolStripMenuItem.Text = "Бургеры";
             this.бургерыToolStripMenuItem.Click += new System.EventHandler(this.бургерыToolStripMenuItem_Click);
             // 
             // курицаToolStripMenuItem
             // 
             this.курицаToolStripMenuItem.Name = "курицаToolStripMenuItem";
-            this.курицаToolStripMenuItem.Size = new System.Drawing.Size(71, 26);
+            this.курицаToolStripMenuItem.Size = new System.Drawing.Size(71, 21);
             this.курицаToolStripMenuItem.Text = "Курица";
             this.курицаToolStripMenuItem.Click += new System.EventHandler(this.курицаToolStripMenuItem_Click);
             // 
             // снекиToolStripMenuItem
             // 
             this.снекиToolStripMenuItem.Name = "снекиToolStripMenuItem";
-            this.снекиToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
+            this.снекиToolStripMenuItem.Size = new System.Drawing.Size(64, 21);
             this.снекиToolStripMenuItem.Text = "Снеки";
             this.снекиToolStripMenuItem.Click += new System.EventHandler(this.снекиToolStripMenuItem_Click);
             // 
             // напиткиToolStripMenuItem
             // 
             this.напиткиToolStripMenuItem.Name = "напиткиToolStripMenuItem";
-            this.напиткиToolStripMenuItem.Size = new System.Drawing.Size(78, 26);
+            this.напиткиToolStripMenuItem.Size = new System.Drawing.Size(78, 21);
             this.напиткиToolStripMenuItem.Text = "Напитки";
             this.напиткиToolStripMenuItem.Click += new System.EventHandler(this.напиткиToolStripMenuItem_Click);
             // 
@@ -128,7 +128,7 @@ namespace KFCFront
             this.самыйДешевыйНапитокToolStripMenuItem,
             this.самыйКалорийныйСнекToolStripMenuItem});
             this.специальныеПредложенияToolStripMenuItem.Name = "специальныеПредложенияToolStripMenuItem";
-            this.специальныеПредложенияToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.специальныеПредложенияToolStripMenuItem.Size = new System.Drawing.Size(211, 21);
             this.специальныеПредложенияToolStripMenuItem.Text = "Специальные предложения";
             // 
             // самоеДорогоеВМенюToolStripMenuItem
@@ -174,7 +174,6 @@ namespace KFCFront
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(746, 210);
             this.label1.TabIndex = 3;
-            // this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -183,7 +182,6 @@ namespace KFCFront
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(458, 276);
             this.label2.TabIndex = 4;
-            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1
             // 
@@ -211,7 +209,6 @@ namespace KFCFront
             this.label3.Size = new System.Drawing.Size(273, 45);
             this.label3.TabIndex = 6;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
             // 
@@ -241,6 +238,7 @@ namespace KFCFront
             this.pictureBox1.Size = new System.Drawing.Size(415, 386);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             //this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrontForm

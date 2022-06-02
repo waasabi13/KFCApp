@@ -40,7 +40,6 @@ namespace KFCFront
                     desc += $"Острый\n";
                 else
                     desc += $"Не острый\n";
-
             }
             if (item is FriedChicken)
             {
@@ -240,6 +239,5 @@ namespace KFCFront
             label3.Visible = false;
         }
 
-        //сделать масштаб картинки
     }
 }
