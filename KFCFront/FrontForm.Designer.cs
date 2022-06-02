@@ -174,7 +174,7 @@ namespace KFCFront
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(746, 210);
             this.label1.TabIndex = 3;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -183,7 +183,7 @@ namespace KFCFront
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(458, 276);
             this.label2.TabIndex = 4;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1
             // 
@@ -211,7 +211,7 @@ namespace KFCFront
             this.label3.Size = new System.Drawing.Size(273, 45);
             this.label3.TabIndex = 6;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
             // 
@@ -241,7 +241,7 @@ namespace KFCFront
             this.pictureBox1.Size = new System.Drawing.Size(415, 386);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            //this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrontForm
             // 

@@ -14,12 +14,14 @@ namespace KFCFront
     {
         private JsonDB db;
         private FSharpList<KFCItemsBase> selectedItems;
+        private int blockMenu = 0;
         private Bitmap photo;
         public FrontForm(string file)
         {
             this.db = new JsonDB(file);
             this.photo = Properties.Resources.photo;
             InitializeComponent();
+            comboBox1.SelectedIndex = 3;
 
         }
         private void DescriptionItem(KFCItemsBase item)
@@ -28,27 +30,27 @@ namespace KFCFront
             pictureBox3.Visible = true;
             label3.Visible = true;
             string label = item.Name;
-            string price= "Цена: " + item.Price + " ₽";
-            string desc = $"КБЖУ на 100г \nКкал: {item.Kcal}\tБ: {item.Proteins}\tЖ: {item.Fats}\tУ: {item.Carbohydrates}\n";            //
+            string price = "Цена: " + item.Price + " ₽";
+            string desc = $"КБЖУ на 100г \nКкал: {item.Kcal}    Б: {item.Proteins} г    Ж: {item.Fats} г    У: {item.Carbohydrates} г\n";            //
             if (item is Burger)
             {
-                desc += $"Вес: {item.Weight}\n";
+                desc += $"Вес: {item.Weight} гр\n";
                 Burger b = (Burger)item;
                 if (b.Spicy)
-                    desc += $"Острота: Да\n";
+                    desc += $"Острый\n";
                 else
-                    desc += $"Острота: Нет\n";
+                    desc += $"Не острый\n";
 
             }
             if (item is FriedChicken)
             {
-                desc += $"Вес: {item.Weight}\n";
+                desc += $"Вес: {item.Weight} гр\n";
                 FriedChicken ch = (FriedChicken)item;
                 desc += $"Количество: {ch.Count}\n";
             }
             if (item is Snack)
             {
-                desc += $"Вес: {item.Weight}\n";
+                desc += $"Вес: {item.Weight} гр\n";
                 Snack s = (Snack)item;
                 desc += $"Размер: {sizeString.SizeToString(s.Size)}\n";
             }
@@ -69,7 +71,8 @@ namespace KFCFront
             this.pictureBox1.LoadAsync(item.PictureURL);
         }
 
-        private void sorting(FSharpList<KFCItemsBase> list) {
+        private void sorting(FSharpList<KFCItemsBase> list)
+        {
             Func<KFCItemsBase, KFCItemsBase, int> sortFunc = (a, b) => 0;
             switch (comboBox1.SelectedIndex)
             {
@@ -100,6 +103,7 @@ namespace KFCFront
             comboBox1.Visible = true;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.Menu();
+            blockMenu = 0;
             sorting(list);
         }
 
@@ -109,6 +113,7 @@ namespace KFCFront
             pictureBox3.Visible = true;
             listBox1.Visible = true;
             comboBox1.Visible = true;
+            blockMenu = 1;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllBurgers();
             sorting(list);
@@ -120,6 +125,7 @@ namespace KFCFront
             pictureBox3.Visible = true;
             listBox1.Visible = true;
             comboBox1.Visible = true;
+            blockMenu = 2;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllChicken();
             sorting(list);
@@ -129,6 +135,7 @@ namespace KFCFront
         {
             pictureBox2.Visible = false;
             pictureBox3.Visible = true;
+            blockMenu = 3;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllSnacks();
             sorting(list);
@@ -140,6 +147,7 @@ namespace KFCFront
             pictureBox3.Visible = true;
             listBox1.Visible = true;
             comboBox1.Visible = true;
+            blockMenu = 4;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllDrinks();
             sorting(list);
@@ -153,6 +161,31 @@ namespace KFCFront
             comboBox1.Visible = true;
             DescriptionItem(selectedItems[listBox1.SelectedIndex]);
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
+            switch (blockMenu)
+            {
+                case 0:
+                    list = db.Menu();
+                    break;
+                case 1:
+                    list = db.GetAllBurgers();
+                    break;
+                case 2:
+                    list = db.GetAllChicken();
+                    break;
+                case 3:
+                    list = db.GetAllSnacks();
+                    break;
+                case 4:
+                    list = db.GetAllDrinks();
+                    break;
+            }
+            sorting(list);
+        }
+
         private void самоеДорогоеВМенюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pictureBox2.Visible = false;
@@ -196,31 +229,6 @@ namespace KFCFront
             listBox1.Visible = false;
             comboBox1.Visible = true;
             DescriptionItem(db.GetMostKcalSnack());
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FrontForm_Load(object sender, EventArgs e)
