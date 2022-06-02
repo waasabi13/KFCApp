@@ -31,7 +31,7 @@ namespace KFCFront
             label3.Visible = true;
             string label = item.Name;
             string price = "Цена: " + item.Price + " ₽";
-            string desc = $"КБЖУ на 100г \nКкал: {item.Kcal}    Б: {item.Proteins} г    Ж: {item.Fats} г    У: {item.Carbohydrates} г\n";            //
+            string desc = $"КБЖУ на 100г \nКкал: {item.Kcal}    Б: {item.Proteins} г    Ж: {item.Fats} г    У: {item.Carbohydrates} г\n";            
             if (item is Burger)
             {
                 desc += $"Вес: {item.Weight} гр\n";
@@ -136,6 +136,7 @@ namespace KFCFront
             pictureBox2.Visible = false;
             pictureBox3.Visible = true;
             blockMenu = 3;
+            comboBox1.Visible = true;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllSnacks();
             sorting(list);
@@ -191,7 +192,7 @@ namespace KFCFront
             pictureBox2.Visible = false;
             pictureBox3.Visible = true;
             listBox1.Visible = false;
-            comboBox1.Visible = true;
+            comboBox1.Visible = false;
             DescriptionItem(db.GetMostExpensive());
         }
 
@@ -200,7 +201,7 @@ namespace KFCFront
             pictureBox2.Visible = false;
             pictureBox3.Visible = true;
             listBox1.Visible = false;
-            comboBox1.Visible = true;
+            comboBox1.Visible = false;
             DescriptionItem(db.GetBiggestBurger());
         }
 
@@ -209,7 +210,7 @@ namespace KFCFront
             pictureBox2.Visible = false;
             pictureBox3.Visible = true;
             listBox1.Visible = false;
-            comboBox1.Visible = true;
+            comboBox1.Visible = false;
             DescriptionItem(db.GetCheapBurger());
         }
 
@@ -218,7 +219,7 @@ namespace KFCFront
             pictureBox2.Visible = false;
             pictureBox3.Visible = true;
             listBox1.Visible = false;
-            comboBox1.Visible = true;
+            comboBox1.Visible = false;
             DescriptionItem(db.GetMostCheapDrink());
         }
 
@@ -227,7 +228,7 @@ namespace KFCFront
             pictureBox2.Visible = false;
             pictureBox3.Visible = true;
             listBox1.Visible = false;
-            comboBox1.Visible = true;
+            comboBox1.Visible = false;
             DescriptionItem(db.GetMostKcalSnack());
         }
 
