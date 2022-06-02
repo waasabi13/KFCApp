@@ -6,10 +6,10 @@ open Newtonsoft.Json.Linq
 type JsonDB(file: string)=
     let Items:(KFCItemsBase list)=
         let rootObj = JObject.Parse(File.ReadAllText(file))
-        let burgers = rootObj.["BURGERS"].ToObject<Burger list>()
-        let chicken = rootObj.["Fried Chicken"].ToObject<FriedChicken list>()
-        let snacks = rootObj.["Snacks"].ToObject<Snack list>()
-        let drinks = rootObj.["Drinks"].ToObject<Drink list>()
+        let burgers = rootObj.["BURGER"].ToObject<Burger list>()
+        let chicken = rootObj.["FRIEDCHICKEN"].ToObject<FriedChicken list>()
+        let snacks = rootObj.["SNACK"].ToObject<Snack list>()
+        let drinks = rootObj.["DRINK"].ToObject<Drink list>()
 
         List.map (fun b -> upcast b) burgers @ List.map  (fun c -> upcast c) chicken @ List.map  (fun s -> upcast s) snacks @ List.map  (fun d -> upcast d) drinks
     

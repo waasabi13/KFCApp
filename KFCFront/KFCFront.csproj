@@ -96,5 +96,14 @@
   <ItemGroup>
     <None Include="Resources\YowI.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18-188879_kfc-wallpaper-kfc-logo-1991.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KFCApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

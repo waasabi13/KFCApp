@@ -24,7 +24,11 @@ namespace KFCFront
         }
         private void DescriptionItem(KFCItemsBase item)
         {
-            string label = item.Name + "\nЦена: " + item.Price+ " ₽";
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            label3.Visible = true;
+            string label = item.Name;
+            string price= "Цена: " + item.Price + " ₽";
             string desc = $"КБЖУ на 100г \nКкал: {item.Kcal}\tБ: {item.Proteins}\tЖ: {item.Fats}\tУ: {item.Carbohydrates}\n";            //
             if (item is Burger)
             {
@@ -59,6 +63,7 @@ namespace KFCFront
             }
             desc += item.Compound;
             this.label2.Text = label;
+            this.label3.Text = price;
             this.label1.Text = desc;
             this.pictureBox1.Image = photo;
             this.pictureBox1.LoadAsync(item.PictureURL);
@@ -89,6 +94,10 @@ namespace KFCFront
 
         private void всёМенюToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = true;
+            comboBox1.Visible = true;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.Menu();
             sorting(list);
@@ -96,6 +105,10 @@ namespace KFCFront
 
         private void бургерыToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = true;
+            comboBox1.Visible = true;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllBurgers();
             sorting(list);
@@ -103,6 +116,10 @@ namespace KFCFront
 
         private void курицаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = true;
+            comboBox1.Visible = true;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllChicken();
             sorting(list);
@@ -110,6 +127,8 @@ namespace KFCFront
 
         private void снекиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllSnacks();
             sorting(list);
@@ -117,6 +136,10 @@ namespace KFCFront
 
         private void напиткиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = true;
+            comboBox1.Visible = true;
             FSharpList<KFCItemsBase> list = FSharpList<KFCItemsBase>.Empty;
             list = db.GetAllDrinks();
             sorting(list);
@@ -124,31 +147,88 @@ namespace KFCFront
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = true;
+            comboBox1.Visible = true;
             DescriptionItem(selectedItems[listBox1.SelectedIndex]);
         }
         private void самоеДорогоеВМенюToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = false;
+            comboBox1.Visible = true;
             DescriptionItem(db.GetMostExpensive());
         }
 
         private void самыйБольшойБургерToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = false;
+            comboBox1.Visible = true;
             DescriptionItem(db.GetBiggestBurger());
         }
 
         private void самыйДешевыйБургерToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = false;
+            comboBox1.Visible = true;
             DescriptionItem(db.GetCheapBurger());
         }
 
         private void самыйДешевыйНапитокToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = false;
+            comboBox1.Visible = true;
             DescriptionItem(db.GetMostCheapDrink());
         }
 
         private void самыйКалорийныйСнекToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            listBox1.Visible = false;
+            comboBox1.Visible = true;
             DescriptionItem(db.GetMostKcalSnack());
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrontForm_Load(object sender, EventArgs e)
+        {
+            pictureBox3.Visible = false;
+            listBox1.Visible = false;
+            comboBox1.Visible = false;
+            label3.Visible = false;
         }
 
         //сделать масштаб картинки
