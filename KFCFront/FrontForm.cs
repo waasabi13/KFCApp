@@ -24,26 +24,27 @@ namespace KFCFront
         }
         private void DescriptionItem(KFCItemsBase item)
         {
-            string label = item.Name + "\nЦена: " + item.Price;
-            string desc = $"КБЖУ на 100г \nКкал: {item.Kcal}\tБ: {item.Proteins}\tЖ: {item.Fats}\tУ: {item.Carbohydrates}\n";
-            desc += $"Вес: {item.Weight}\n";
-            //
+            string label = item.Name + "\nЦена: " + item.Price+ " ₽";
+            string desc = $"КБЖУ на 100г \nКкал: {item.Kcal}\tБ: {item.Proteins}\tЖ: {item.Fats}\tУ: {item.Carbohydrates}\n";            //
             if (item is Burger)
             {
+                desc += $"Вес: {item.Weight}\n";
                 Burger b = (Burger)item;
                 if (b.Spicy)
                     desc += $"Острота: Да\n";
                 else
-                    desc += $"Острота: Да\n";
+                    desc += $"Острота: Нет\n";
 
             }
             if (item is FriedChicken)
             {
+                desc += $"Вес: {item.Weight}\n";
                 FriedChicken ch = (FriedChicken)item;
                 desc += $"Количество: {ch.Count}\n";
             }
             if (item is Snack)
             {
+                desc += $"Вес: {item.Weight}\n";
                 Snack s = (Snack)item;
                 desc += $"Размер: {sizeString.SizeToString(s.Size)}\n";
             }
@@ -52,9 +53,9 @@ namespace KFCFront
                 Drink d = (Drink)item;
                 desc += $"Размер: {sizeString.SizeToString(d.Size)}\n";
                 if (d.Hot)
-                    desc += $"Горячий напиток: Да\n";
+                    desc += $"Горячий напиток\n";
                 else
-                    desc += $"Холодный напиток: Да\n";
+                    desc += $"Холодный напиток\n";
             }
             desc += item.Compound;
             this.label2.Text = label;
@@ -121,9 +122,35 @@ namespace KFCFront
             sorting(list);
         }
 
-        private void FrontForm_Load(object sender, EventArgs e)
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            DescriptionItem(selectedItems[listBox1.SelectedIndex]);
         }
+        private void самоеДорогоеВМенюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetMostExpensive());
+        }
+
+        private void самыйБольшойБургерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetBiggestBurger());
+        }
+
+        private void самыйДешевыйБургерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetCheapBurger());
+        }
+
+        private void самыйДешевыйНапитокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetMostCheapDrink());
+        }
+
+        private void самыйКалорийныйСнекToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DescriptionItem(db.GetMostKcalSnack());
+        }
+
+        //сделать масштаб картинки
     }
 }
