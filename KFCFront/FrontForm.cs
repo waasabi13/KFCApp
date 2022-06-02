@@ -62,7 +62,7 @@ namespace KFCFront
                 else
                     desc += $"Холодный напиток\n";
             }
-            desc += item.Compound;
+            desc += $"\nСостав: {item.Compound}";
             this.label2.Text = label;
             this.label3.Text = price;
             this.label1.Text = desc;
