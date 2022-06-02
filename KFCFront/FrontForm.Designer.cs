@@ -172,7 +172,7 @@ namespace KFCFront
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(469, 437);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(746, 210);
+            this.label1.Size = new System.Drawing.Size(746, 310);
             this.label1.TabIndex = 3;
             // 
             // label2
@@ -236,10 +236,9 @@ namespace KFCFront
             this.pictureBox1.Location = new System.Drawing.Point(444, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(415, 386);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            //this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrontForm
             // 

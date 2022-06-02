@@ -40,18 +40,21 @@ namespace KFCFront
                     desc += $"Острый\n";
                 else
                     desc += $"Не острый\n";
+                desc += $"\nСостав: {item.Compound}";
             }
             if (item is FriedChicken)
             {
                 desc += $"Вес: {item.Weight} гр\n";
                 FriedChicken ch = (FriedChicken)item;
                 desc += $"Количество: {ch.Count}\n";
+                desc += $"\nСостав: {item.Compound}";
             }
             if (item is Snack)
             {
                 desc += $"Вес: {item.Weight} гр\n";
                 Snack s = (Snack)item;
                 desc += $"Размер: {sizeString.SizeToString(s.Size)}\n";
+                desc += $"\nСостав: {item.Compound}";
             }
             if (item is Drink)
             {
@@ -62,7 +65,7 @@ namespace KFCFront
                 else
                     desc += $"Холодный напиток\n";
             }
-            desc += $"\nСостав: {item.Compound}";
+           
             this.label2.Text = label;
             this.label3.Text = price;
             this.label1.Text = desc;
