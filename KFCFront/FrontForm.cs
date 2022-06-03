@@ -22,7 +22,6 @@ namespace KFCFront
             this.photo = Properties.Resources.photo;
             InitializeComponent();
             comboBox1.SelectedIndex = 3;
-
         }
         private void DescriptionItem(KFCItemsBase item)
         {
